@@ -11,9 +11,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.use(helmet());
-  app.enableCors({
-    origin: ['http://localhost:3001', 'https://adlib-ebon.vercel.app', 'https://mantle-adlib-7plv.vercel.app/demo'],
-  });
+  app.enableCors();
 
   await app.listen(configService.get<AppConfig>('app')!.port);
 }
