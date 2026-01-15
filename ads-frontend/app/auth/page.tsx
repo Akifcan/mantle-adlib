@@ -4,6 +4,7 @@ import { WalletConnectButton } from "@/components/ui/wallet-connect-button"
 import { Button } from "@/components/ui/button"
 import { Zap, Shield, TrendingUp, Users, Globe, Star, ArrowRight, Wallet, ChevronRight, Lock, Layers, BarChart3 } from "lucide-react"
 import { useWeb3 } from "@/components/providers/web3-provider"
+import { APP_NAME } from "@/lib/constants"
 
 export default function Auth() {
 
@@ -26,10 +27,8 @@ export default function Auth() {
                     {/* Logo & Branding */}
                     <div className="mb-12">
                         <div className="flex items-center space-x-3 mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-600 rounded-xl flex items-center justify-center">
-                                <Zap className="h-7 w-7 text-white" />
-                            </div>
-                            <h1 className="text-3xl font-bold text-white">Web3Ads</h1>
+                            <img src="/logo-icon.svg" alt={`${APP_NAME} logo`} className="h-10 w-10" />
+                            <h1 className="text-3xl font-bold text-white">AdLib</h1>
                         </div>
                         <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
                             The Future of
