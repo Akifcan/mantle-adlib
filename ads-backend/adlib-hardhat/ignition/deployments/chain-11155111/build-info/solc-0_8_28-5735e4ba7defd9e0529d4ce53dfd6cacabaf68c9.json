@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-5735e4ba7defd9e0529d4ce53dfd6cacabaf68c9",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/BalanceTransfer.sol": "project/contracts/BalanceTransfer.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/BalanceTransfer.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract BalanceTransfer {\n    address private masterWallet = 0xbe4cc29f45d5b8eeC7dd2B2DA6DA4aC967E91c15;\n    \n    event BalanceSent(address indexed sender, uint256 amount);\n    \n    function sendToMasterWallet() public payable {\n        require(msg.value > 0, \"Amount must be greater than 0\");\n        \n        (bool success, ) = masterWallet.call{value: msg.value}(\"\");\n        require(success, \"Transfer failed\");\n        \n        emit BalanceSent(msg.sender, msg.value);\n    }\n    \n    function getContractBalance() public view returns (uint256) {\n        return address(this).balance;\n    }\n    \n    function getMasterWallet() public view returns (address) {\n        return masterWallet;\n    }\n    \n    receive() external payable {\n        sendToMasterWallet();\n    }\n    \n    fallback() external payable {\n        sendToMasterWallet();\n    }\n}"
+      }
+    }
+  }
+}

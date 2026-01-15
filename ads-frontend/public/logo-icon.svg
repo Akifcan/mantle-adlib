@@ -1,0 +1,58 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Central hexagon representing blockchain -->
+  <polygon points="32,16 40,24 40,40 32,48 24,40 24,24" 
+           fill="url(#iconGradient)" 
+           stroke="url(#accentGradient)" 
+           stroke-width="2"
+           filter="url(#glow)"/>
+  
+  <!-- Connecting lines representing network -->
+  <line x1="40" y1="24" x2="48" y2="20" 
+        stroke="url(#accentGradient)" 
+        stroke-width="2.5" 
+        opacity="0.9"/>
+  <line x1="40" y1="40" x2="48" y2="44" 
+        stroke="url(#accentGradient)" 
+        stroke-width="2.5" 
+        opacity="0.9"/>
+  <line x1="24" y1="24" x2="16" y2="20" 
+        stroke="url(#accentGradient)" 
+        stroke-width="2.5" 
+        opacity="0.9"/>
+  <line x1="24" y1="40" x2="16" y2="44" 
+        stroke="url(#accentGradient)" 
+        stroke-width="2.5" 
+        opacity="0.9"/>
+  
+  <!-- Small nodes -->
+  <circle cx="48" cy="20" r="4" fill="url(#accentGradient)" opacity="0.9"/>
+  <circle cx="48" cy="44" r="4" fill="url(#accentGradient)" opacity="0.9"/>
+  <circle cx="16" cy="20" r="4" fill="url(#accentGradient)" opacity="0.9"/>
+  <circle cx="16" cy="44" r="4" fill="url(#accentGradient)" opacity="0.9"/>
+  
+  <!-- Ad symbol - megaphone -->
+  <path d="M28 20 L36 20 L38 22 L38 26 L36 28 L28 28 L26 24 Z" 
+        fill="url(#accentGradient)" 
+        opacity="0.9"/>
+  <circle cx="26" cy="24" r="2" fill="url(#accentGradient)" opacity="0.7"/>
+</svg>
